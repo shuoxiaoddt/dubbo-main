@@ -4,17 +4,15 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.ftd.dubbo.ex</groupId>
-  <artifactId>dubbo-main</artifactId>
-  <packaging>pom</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <modules>
-    <module>dubbo-pay-api</module>
-    <module>dubbo-pay-service</module>
-    <module>dubbo-consumer</module>
-  </modules>
+  <parent>
+    <artifactId>dubbo-main</artifactId>
+    <groupId>com.ftd.dubbo.ex</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
 
-  <name>dubbo-main</name>
+  <artifactId>dubbo-consumer</artifactId>
+
+  <name>dubbo-consumer</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -22,12 +20,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <spring.version>4.3.20.RELEASE</spring.version>
-    <dubbo.verion>2.7.4.1</dubbo.verion>
-    <slf4j-log4j12.version>1.7.25</slf4j-log4j12.version>
-    <slf4j-version>1.7.25</slf4j-version>
-    <log4j-version>1.2.16</log4j-version>
-    <curator-version>4.2.0</curator-version>
   </properties>
 
   <dependencies>
@@ -37,59 +29,40 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.ftd.dubbo.ex</groupId>
+      <artifactId>dubbo-pay-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.dubbo</groupId>
+      <artifactId>dubbo</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.curator</groupId>
+      <artifactId>curator-framework</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.curator</groupId>
+      <artifactId>curator-recipes</artifactId>
+    </dependency>
   </dependencies>
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>com.ftd.dubbo.ex</groupId>
-        <artifactId>dubbo-pay-api</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-context</artifactId>
-        <version>${spring.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-beans</artifactId>
-        <version>${spring.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.dubbo</groupId>
-        <artifactId>dubbo</artifactId>
-        <version>${dubbo.verion}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>${slf4j-version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-log4j12</artifactId>
-        <version>${slf4j-version}</version>
-      </dependency>
-      <dependency>
-        <groupId>log4j</groupId>
-        <artifactId>log4j</artifactId>
-        <version>${log4j-version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.curator</groupId>
-        <artifactId>curator-framework</artifactId>
-        <version>${curator-version}</version>
-      </dependency>
-      <!-- https://mvnrepository.com/artifact/org.apache.curator/curator-recipes -->
-      <dependency>
-        <groupId>org.apache.curator</groupId>
-        <artifactId>curator-recipes</artifactId>
-        <version>${curator-version}</version>
-      </dependency>
-    </dependencies>
-
-  </dependencyManagement>
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
