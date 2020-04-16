@@ -12,6 +12,9 @@
     <module>dubbo-pay-api</module>
     <module>dubbo-pay-service</module>
     <module>dubbo-consumer</module>
+    <module>dubbo-springboot-api</module>
+    <module>dubbo-springboot-service</module>
+    <module>dubbo-source-analyse</module>
   </modules>
 
   <name>dubbo-main</name>
@@ -64,6 +67,11 @@
       <dependency>
         <groupId>org.apache.dubbo</groupId>
         <artifactId>dubbo</artifactId>
+        <version>${dubbo.verion}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.dubbo</groupId>
+        <artifactId>dubbo-rpc-api</artifactId>
         <version>${dubbo.verion}</version>
       </dependency>
       <dependency>
