@@ -25,7 +25,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <spring.version>4.3.20.RELEASE</spring.version>
+    <spring.version>5.3.18</spring.version>
     <dubbo.verion>2.7.4.1</dubbo.verion>
     <slf4j-log4j12.version>1.7.25</slf4j-log4j12.version>
     <slf4j-version>1.7.25</slf4j-version>
